@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container{
+  position: relative;
+}
+
+.parallax {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Menyembunyikan bagian yang melebihi batas parallax */
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Menempatkan latar belakang di bawah konten */
+  background: url(img/back.png) center/cover no-repeat fixed;
+}
+
+#text {
+  position: absolute;
+  font-size: 5em;
+  text-shadow: 2px 4px 5px #f9f9f9;
+  color: #1b283a;
+}
+
+.parallax img {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* Untuk layar kecil */
+@media only screen and (max-width: 600px) {
+  .background {
+      background-attachment: scroll; /* Mengatur latar belakang agar dapat di-scroll pada layar kecil */
+  }
+}
