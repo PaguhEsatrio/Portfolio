@@ -15,6 +15,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
   <title>Portfolio</title>
+  <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
 </head>
 
 <body>
@@ -37,31 +44,23 @@
             <ul class="block lg:flex">
               <li class="group">
                 <a href="#home"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Beranda</a>
+                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-slate-300">Beranda</a>
               </li>
               <li class="group">
                 <a href="#about"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Tentang Saya</a>
+                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-slate-300">Tentang Saya</a>
               </li>
               <li class="group">
                 <a href="#portfolio"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Portfolio</a>
-              </li>
-              <li class="group">
-                <a href="#clients"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Clients</a>
-              </li>
-              <li class="group">
-                <a href="#blog"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Blog</a>
+                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-slate-300">Portfolio</a>
               </li>
               <li class="group">
                 <a href="#contact"
-                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-black">Contact</a>
+                  class="mx-8 flex py-2 text-base text-black group-hover:text-primary dark:text-slate-300">Contact</a>
               </li>
               <li class="mt-3 flex items-center pl-8 lg:mt-0">
                 <div class="flex">
-                  <span class="mr-2 text-sm text-slate-500">light</span>
+                  <span class="mr-2 text-sm text-slate-500">Terang</span>
                   <input type="checkbox" class="hidden" id="dark-toggle" />
                   <label for="dark-toggle">
                     <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
@@ -69,7 +68,7 @@
                       </div>
                     </div>
                   </label>
-                  <span class="ml-2 text-sm text-slate-500">dark</span>
+                  <span class="ml-2 text-sm text-slate-500">Gelap</span>
                 </div>
               </li>
             </ul>
@@ -80,7 +79,7 @@
   </header>
   <!-- Header End -->
 
-  <section id="home" class="flex relative justify-center items-center bg-gray-500 bg-size">
+  <section id="home" class="flex relative justify-center items-center bg-gray-300 bg-size ">
     <h1
       style="position: absolute;z-index: 1;color: white;font-size: 4em;font-family: 'VT323', monospace;top: 30%;width: 100%;text-align: center;">
       Welcome
@@ -90,7 +89,7 @@
       Portfolio Paguh Esatrio
     </p>
     <div id="desktop-scene" class="w-screen h-screen text-center relative overflow-hidden hidden lg:block">
-      <div class="mx-auto w-full h-full bg-gray-300"></div>
+      <div class="mx-auto w-full h-full bg-gray-300 dark:bg-slate-600"></div>
       <img src="dist/img/1.png" class="absolute w-full h-full object-cover" data-depth="-0.30" />
       <img src="dist/img/2.png" class="absolute w-full h-full object-cover" data-depth="-0.15" />
       <img src="dist/img/3.png" class="absolute w-full h-full object-cover" data-depth="-0.10" />
@@ -98,12 +97,13 @@
       <img src="dist/img/5.png" class="absolute w-full h-full object-cover" data-depth="0.20" />
       <img src="dist/img/6.png" class="absolute w-full h-full object-cover" data-depth="-2 " />
       <img src="dist/img/7.png" class="absolute w-full h-full object-cover" data-depth="2" />
+      <img src="dist/img/waveBlack.png" class="absolute w-full h-full " />
       <img src="dist/img/wave1.png" class="absolute w-full h-full dark:invisible" />
     </div>
 
     <div class="relative h-screen lg:hidden">
       <div id="mobile-scene" class="w-screen h-screen text-center relative">
-        <div class="mx-auto w-full h-full bg-gray-300"></div>
+        <div class="mx-auto w-full h-full bg-gray-300  dark:bg-slate-600"></div>
         <img src="dist/img/1.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="-0.30" />
         <img src="dist/img/2.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="-0.15" />
         <img src="dist/img/3.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="-0.10" />
@@ -111,6 +111,7 @@
         <img src="dist/img/5.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="0.20" />
         <img src="dist/img/6.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="-2" />
         <img src="dist/img/7.png" class="absolute w-full object-cover" style="height: 350px;" data-depth="2" />
+        <img src="dist/img/waveBlack.png" class="absolute w-full h-full " />
         <img src="dist/img/wave1.png" class="absolute w-full h-full dark:invisible" />
       </div>
   </section>
@@ -124,11 +125,11 @@
             Halo Semua, Saya
             <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">Paguh Esatrio</span>
           </h1>
-          <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">
+          <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl dark:text-emerald-300">
             Bachelor's degree |
             <span class="text-dark dark:text-white">Information Technology</span>
           </h2>
-          <p class="mb-10 font-medium leading-relaxed text-secondary">
+          <p class="mb-10 font-medium leading-relaxed text-secondary dark:text-slate-300">
             Fresh graduate jurusan S1 Informatika Universitas Sanata Dharma
             dengan ipk 3,47 yang sedang mencari kesempatan karir di bidang IT.
             Selama kuliah, saya beberapa kali terlibat dalam projek pembuatan
@@ -159,7 +160,7 @@
         <div class="mx-auto mb-16 max-w-xl text-center">
           <h2 style="font-size: 4em; font-family: 'VT323', monospace;"
             class="mb-10 font-bold uppercase text-primary dark:text-white sm:text-4xl lg:text-5xl">Portfolio</h2>
-          <p class="text-md font-medium text-secondary md:text-lg">
+          <p class="text-md font-medium text-secondary md:text-lg dark:text-white">
             Project yang Pernah Saya buat
           </p>
         </div>
@@ -168,7 +169,7 @@
       <div class="flex flex-wrap gap-8 justify-center">
 
         <!-- PORT 1 -->
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8">
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8 border-2 border-primary dark:bg-stone-300 dark:border-emerald-900">
           <img class="w-full" src="dist/img/porto/1.png" />
           <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Seven Kos</div>
@@ -177,7 +178,7 @@
             </p>
             <div class="mt-4">
               <button
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-secondary hover:border-transparent focus:outline-none">
+                class="px-4 py-1 text-sm text-emerald-600 font-semibold rounded-full border border-emerald-200 hover:text-white hover:bg-primary hover:border-transparent focus:outline-none">
                 <a href="https://github.com/PaguhEsatrio/Sisenduker">Github</a>
               </button>
             </div>
@@ -185,8 +186,8 @@
         </div>
 
         <!-- Port 2 -->
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8">
-          <img class="w-full" src="dist/img/porto/2.png" />
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8 border-2 border-primary dark:bg-stone-300 dark:border-emerald-900">
+          <img class="w-full" src="/dist/img/porto/2.png" />
           <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Sisenduker</div>
             <p class="text-gray-700 text-base">
@@ -195,18 +196,20 @@
             </p>
             <div class="mt-4">
               <button
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-secondary hover:border-transparent focus:outline-none">
+                class="px-4 py-1 text-sm text-emerald-600 font-semibold rounded-full border border-emerald-200 hover:text-white hover:bg-primary hover:border-transparent focus:outline-none">
                 <a href="https://sisenduker.000webhostapp.com/">Website</a>
               </button>
               <button
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-secondary hover:border-transparent focus:outline-none">
+                class="px-4 py-1 text-sm text-emerald-600 font-semibold rounded-full border border-emerald-200 hover:text-white hover:bg-primary hover:border-transparent focus:outline-none">
                 <a href="https://github.com/PaguhEsatrio/Sisenduker">Github</a>
               </button>
             </div>
           </div>
         </div>
-        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8">
-          <img class="w-full" src="dist/img/porto/3.png" />
+
+        <!-- port 3 -->
+        <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white mb-8 border-2 border-primary dark:bg-stone-300 dark:border-emerald-900">
+          <img class="w-full" src="/dist/img/porto/3.png" />
           <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Web Ucapan Ulang Tahun</div>
             <p class="text-gray-700 text-base">
@@ -214,11 +217,11 @@
             </p>
             <div class="mt-4">
               <button
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-secondary hover:border-transparent focus:outline-none">
+                class="px-4 py-1 text-sm text-emerald-600 font-semibold rounded-full border border-emerald-200 hover:text-white hover:bg-primary hover:border-transparent focus:outline-none">
                 <a href="https://paguhesatrio.github.io/bebibesday/awal.html">Website</a>
               </button>
               <button
-                class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-secondary hover:border-transparent focus:outline-none">
+                class="px-4 py-1 text-sm text-emerald-600 font-semibold rounded-full border border-emerald-200 hover:text-white hover:bg-primary hover:border-transparent focus:outline-none">
                 <a href="https://github.com/PaguhEsatrio/bebibesday">Github</a>
               </button>
             </div>
@@ -237,7 +240,7 @@
           <h2 style="font-size: 3.5em; font-family: 'VT323', monospace;"
             class="mb-5 font-bold uppercase text-primary dark:text-white sm:text-4xl lg:text-5xl">Contact
           </h2>
-          <p class="text-md font-medium text-secondary md:text-lg">Mari Berteman dan Tetap Terhubung</p>
+          <p class="text-md font-medium text-secondary md:text-lg dark:text-white">Mari Berteman dan Tetap Terhubung</p>
           <div class="flex items-center justify-center pt-3">
             <!-- Instagram -->
             <a href="https://instagram.com/paguh_esatrio" target="_blank"
@@ -271,33 +274,60 @@
           </div>
         </div>
 
-        <div id="alert-border-1"
-          class="alert-ku opacity-0 flex items-center p-4 mb-4 text-green-500 border-t-4 border-green-300 bg-blue-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800"
-          role="alert">
-          <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-            viewBox="0 0 20 20">
-            <path
-              d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-          </svg>
-          <div class="ml-3 text-sm font-medium">
-            A simple info alert with an <a href="#" class="font-semibold underline hover:no-underline">example link</a>.
-            Give it a click if you like.
-          </div>
-          <button type="button" id="close-button"
-            class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700"
-            aria-label="Close">
-            <span class="sr-only">Dismiss</span>
-            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+        <div id="alert-ku" class="alert-ku hidden">
+          <div id="alert-border-1"
+            class="flex items-center p-4 mb-4 text-green-500 border-t-4 border-green-300 bg-blue-50 dark:text-green-400 dark:bg-slate-500 dark:border-green-800"
+            role="alert">
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
             </svg>
-          </button>
+            <div class="ml-3 text-sm font-medium">
+              Pesan Sudah Terkirim, Terima Kasih Sudah Menghubungi
+            </div>
+            <button type="button" id="close-button"
+              class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-slate-500 dark:text-green-400 dark:hover:bg-gray-700"
+              aria-label="Close">
+              <span class="sr-only">Dismiss</span>
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div class="bg-gray-200 pb-10 flex flex-wrap">
+        <div id="alert-salah" class="alert-salah hidden">
+          <div id="alert-border-1"
+            class="flex items-center p-4 mb-4 text-red-500 border-t-4 border-red-300 bg-blue-50 dark:text-red-400 dark:bg-slate-500 dark:border-red-800"
+            role="alert">
+            <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+              viewBox="0 0 20 20">
+              <path
+                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+            </svg>
+            <div class="ml-3 text-sm font-medium">
+              Harap lengkapi semua form sebelum mengirim.
+            </div>
+            <button type="button" id="close-button1"
+              class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex items-center justify-center h-8 w-8 dark:bg-slate-500 dark:text-red-400 dark:hover:bg-gray-700"
+              aria-label="Close">
+              <span class="sr-only">Dismiss</span>
+              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 14 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-gray-200 pb-10 flex flex-wrap dark:bg-slate-700">
           <div class="w-full px-4 mb-10 lg:w-1/2">
             <div class="relative mt-5 lg:right-0 lg:mt-9">
-              <img src="dist/img/paguh.png" alt="paguh" class="relative z-10 mx-auto max-w-full" />
+              <img src="dist/img/alien.png" alt="contact" class="relative z-10 mx-auto max-w-full" />
             </div>
           </div>
           <div class="w-full self-end px-4 lg:w-1/2">
@@ -348,7 +378,7 @@
     <div class="container">
       <div class="w-full pt-10">
         <p style="font-size: 1.2em; font-family: 'VT323', monospace;"
-          class="text-center text-xs font-normal text-black">
+          class="text-center text-xs font-normal text-black dark:text-white">
           Dibuat dengan oleh <a href="https://github.com/PaguhEsatrio" target="_blank"
             class="font-bold text-primary">Paguh Esatrio</a>
         </p>
